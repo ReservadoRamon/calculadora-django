@@ -19,7 +19,7 @@
   <!-- Título -->
   <div class="page-title">
     <h1>Calculadora Avançada</h1>
-    <p>Calculadora com histórico de operações</p>
+    <p>Calculadora com histórico de operações</p>  
   </div>
 
   <!-- Área da calculadora -->
@@ -90,13 +90,13 @@
   const toggleBtn = document.getElementById('theme-toggle');
   const body = document.body;
 
-  // Carrega o tema salvo no localStorage
+  
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     body.classList.add('light-mode');
   }
 
-  // Alternar tema ao clicar
+  
   toggleBtn.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     const newTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
