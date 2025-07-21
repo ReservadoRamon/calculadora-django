@@ -1,0 +1,240 @@
+/* === STYLE.CSS (Calculadora com alternância de tema e layout fixo) === */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #2b074f, #4b0a85);
+  color: white;
+  transition: background 0.4s, color 0.4s;
+}
+
+body.light-mode {
+  background: linear-gradient(135deg, #f2f2f2, #e0e0e0);
+  color: #222;
+}
+
+.page-title {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.page-title h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.page-title p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.logout-form {
+  text-align: right;
+  padding: 10px;
+}
+
+.logout-form button {
+  padding: 6px 12px;
+  background: #fff;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  align-items: flex-start;
+}
+
+.calculator {
+  background: #1e1b2e;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: background 0.4s;
+  height: 500px; /* altura fixa */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body.light-mode .calculator {
+  background: #fff;
+  color: #000;
+}
+
+.display {
+  background: #111;
+  color: white;
+  font-size: 2rem;
+  padding: 15px;
+  text-align: right;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.light-mode .display {
+  background: #e6e6e6;
+  color: #000;
+}
+
+.display .operation {
+  font-size: 16px;
+  color: #aaa;
+}
+
+.display .result {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.grid-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  transition: background 0.3s;
+}
+
+.btn.operator {
+  background-color: #a239ea;
+}
+
+.btn.clear {
+  background-color: #ff3b3f;
+}
+
+.btn.equals {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+.btn.zero {
+  grid-column: span 2;
+}
+
+body.light-mode .btn {
+  background-color: #ddd;
+  color: #222;
+}
+
+body.light-mode .btn.operator {
+  background-color: #a239ea;
+  color: white;
+}
+
+body.light-mode .btn.clear {
+  background-color: #ff3b3f;
+  color: white;
+}
+
+body.light-mode .btn.equals {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+}
+
+.history {
+  width: 300px;
+  background: #1e1b2e;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  max-height: 500px;
+  overflow-y: auto;
+  transition: background 0.4s;
+}
+
+body.light-mode .history {
+  background: #fff;
+  color: #000;
+}
+
+.history h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.trash-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+body.light-mode .trash-btn {
+  color: #000;
+}
+
+.history-item {
+  background: #2a2344;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+body.light-mode .history-item {
+  background: #f2f2f2;
+  color: #111;
+}
+
+.history-item strong {
+  color: #fff;
+}
+
+body.light-mode .history-item strong {
+  color: #000;
+}
+
+.no-history {
+  font-style: italic;
+  color: #ccc;
+}
+
+body.light-mode .no-history {
+  color: #777;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s;
+}
+
+body.light-mode .theme-toggle {
+  color: #333;
+}
+
+.history-item .timestamp {
+  font-size: 0.75rem;
+  color: #aaa;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
